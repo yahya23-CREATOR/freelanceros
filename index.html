@@ -1,1 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreelancerOS — AI Operating System for Freelancers</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Inter,Arial,sans-serif;
+      background:#050816;
+      color:#fff;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:92%;max-width:1200px;margin:auto}
+    .gradient{
+      position:fixed;inset:0;z-index:-1;
+      background:
+      radial-gradient(circle at top left,#2563eb55,transparent 35%),
+      radial-gradient(circle at top right,#7c3aed55,transparent 35%),
+      radial-gradient(circle at bottom,#0f766e55,transparent 30%),
+      #050816;
+    }
+    nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:24px 0;
+    }
+    .logo{font-size:26px;font-weight:900;letter-spacing:-1px}
+    .logo span{color:#60a5fa}
+    .nav-links{display:flex;gap:25px;color:#cbd5e1;font-size:14px}
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:14px;
+      font-weight:800;
+      background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+      color:white;
+      border:0;
+      cursor:pointer;
+      box-shadow:0 15px 35px #2563eb55;
+    }
+    .btn.secondary{
+      background:#111827;
+      border:1px solid #334155;
+      box-shadow:none;
+    }
+    .hero{
+      padding:90px 0 70px;
+      text-align:center;
+    }
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid #334155;
+      border-radius:999px;
+      color:#cbd5e1;
+      background:#0f172acc;
+      margin-bottom:22px;
+      font-size:14px;
+    }
+    h1{
+      font-size:clamp(42px,7vw,82px);
+      line-height:1;
+      letter-spacing:-4px;
+      margin-bottom:25px;
+    }
+    .hero p{
+      max-width:820px;
+      margin:0 auto 34px;
+      color:#cbd5e1;
+      font-size:21px;
+    }
+    .hero-actions{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin:60px 0;
+    }
+    .stat,.card,.panel,.price-card{
+      background:linear-gradient(180deg,#111827dd,#0f172add);
+      border:1px solid #1e293b;
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 25px 70px #00000055;
+    }
+    .stat h3{font-size:34px;color:#60a5fa}
+    .stat p{color:#94a3b8}
+    section{padding:75px 0}
+    .section-title{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 45px;
+    }
+    .section-title h2{
+      font-size:clamp(32px,5vw,54px);
+      letter-spacing:-2px;
+      margin-bottom:14px;
+    }
+    .section-title p{color:#cbd5e1;font-size:18px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+    }
+    .card h3{font-size:21px;margin-bottom:10px}
+    .card p{color:#cbd5e1}
+    .icon{
+      width:46px;height:46px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      margin-bottom:18px;
+      font-size:22px;
+    }
+    .demo-wrap{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:24px;
+      align-items:start;
+    }
+    textarea,input,select{
+      width:100%;
+      padding:15px;
+      border-radius:14px;
+      border:1px solid #334155;
+      background:#020617;
+      color:white;
+      margin-bottom:14px;
+      font-size:15px;
+    }
+    textarea{height:190px;resize:none}
+    .output-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+    }
+    .mini{
+      background:#020617;
+      border:1px solid #1e293b;
+      border-radius:18px;
+      padding:18px;
+    }
+    .mini h4{color:#93c5fd;margin-bottom:8px}
+    .mini p,.mini li{color:#cbd5e1;font-size:14px}
+    ul{padding-left:18px}
+    .dashboard{
+      border-radius:28px;
+      border:1px solid #334155;
+      background:#020617;
+      padding:18px;
+      box-shadow:0 30px 100px #000;
+    }
+    .dashboard-top{
+      display:flex;gap:8px;margin-bottom:18px;
+    }
+    .dot{width:12px;height:12px;border-radius:50%;background:#475569}
+    .screen{
+      display:grid;
+      grid-template-columns:240px 1fr;
+      gap:16px;
+    }
+    .sidebar,.main-screen{
+      background:#0f172a;
+      border-radius:18px;
+      padding:18px;
+    }
+    .menu{
+      padding:12px;
+      border-radius:12px;
+      color:#cbd5e1;
+      margin-bottom:8px;
+      background:#111827;
+    }
+    .active{background:#2563eb;color:white}
+    .timeline{
+      display:grid;
+      gap:12px;
+    }
+    .task{
+      padding:14px;
+      border-radius:14px;
+      background:#020617;
+      border:1px solid #1e293b;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .tag{
+      font-size:12px;
+      padding:5px 9px;
+      border-radius:99px;
+      background:#064e3b;
+      color:#6ee7b7;
+      white-space:nowrap;
+    }
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:22px;
+    }
+    .price-card.featured{
+      border:1px solid #60a5fa;
+      transform:scale(1.03);
+    }
+    .price{font-size:44px;font-weight:900;margin:10px 0}
+    .price span{font-size:16px;color:#94a3b8}
+    .price-card li{margin:10px 0;color:#cbd5e1}
+    .waitlist{
+      max-width:720px;
+      margin:auto;
+      text-align:center;
+    }
+    .faq .card{margin-bottom:14px}
+    footer{
+      border-top:1px solid #1e293b;
+      padding:35px 0;
+      color:#94a3b8;
+      text-align:center;
+    }
+    @media(max-width:850px){
+      .nav-links{display:none}
+      .demo-wrap,.screen{grid-template-columns:1fr}
+      h1{letter-spacing:-2px}
+      .price-card.featured{transform:none}
+    }
+  </style>
+</head>
+<body>
+<div class="gradient"></div>
 
+<div class="container">
+  <nav>
+    <div class="logo">Freelancer<span>OS</span></div>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <a href="#waitlist" class="btn">Join Waitlist</a>
+  </nav>
+
+  <section class="hero">
+    <div class="badge">The AI Command Center for Independent Workers</div>
+    <h1>Your freelance business, run by AI.</h1>
+    <p>
+      FreelancerOS turns raw client messages into proposals, contracts, invoices,
+      project timelines, payment reminders, client portals, and tax allocation suggestions.
+    </p>
+    <div class="hero-actions">
+      <a href="#demo" class="btn">Try Interactive Demo</a>
+      <a href="#waitlist" class="btn secondary">Become a Founding User</a>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><h3>1</h3><p>Unified system instead of scattered tools.</p></div>
+    <div class="stat"><h3>60s</h3><p>From client email to complete workflow.</p></div>
+    <div class="stat"><h3>24/7</h3><p>AI executive assistant for your solo business.</p></div>
+  </div>
+
+  <section id="problem">
+    <div class="section-title">
+      <h2>The freelancer chaos problem</h2>
+      <p>
+        Independent workers are forced to be creators, salespeople, accountants,
+        project managers, legal assistants, and customer support — all at once.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="icon">🧾</div><h3>Invoices everywhere</h3><p>Late payments, forgotten invoices, and no clear payment tracking.</p></div>
+      <div class="card"><div class="icon">📑</div><h3>Weak contracts</h3><p>Many freelancers start projects without clear scope, payment terms, or revision limits.</p></div>
+      <div class="card"><div class="icon">💬</div><h3>Client messages become chaos</h3><p>Important details get lost across email, WhatsApp, Slack, Notion, and Trello.</p></div>
+      <div class="card"><div class="icon">💸</div><h3>Tax stress</h3><p>Freelancers spend money without separating taxes, expenses, and profit.</p></div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="section-title">
+      <h2>One AI system for the entire client lifecycle</h2>
+      <p>
+        FreelancerOS is not another modular SaaS tool. It is an autonomous operating system
+        for solopreneurs.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="icon">🤖</div><h3>AI Client Message Analyzer</h3><p>Detects budget, timeline, project type, risks, missing details, and next actions.</p></div>
+      <div class="card"><div class="icon">🚀</div><h3>Proposal Generator</h3><p>Creates polished proposals with scope, deliverables, timeline, price, and CTA.</p></div>
+      <div class="card"><div class="icon">⚖️</div><h3>Contract Assistant</h3><p>Drafts contract structure with payment terms, scope, ownership, revisions, and late-payment clauses.</p></div>
+      <div class="card"><div class="icon">💵</div><h3>Smart Invoicing</h3><p>Generates deposit and final invoices from the accepted proposal.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Project Milestones</h3><p>Turns the project into a clear roadmap with deadlines and deliverables.</p></div>
+      <div class="card"><div class="icon">🔔</div><h3>Payment Reminders</h3><p>Prepares polite follow-ups for deposits, late payments, and final delivery.</p></div>
+      <div class="card"><div class="icon">🏦</div><h3>Tax Allocation</h3><p>Suggests how much income to reserve for taxes, expenses, and savings.</p></div>
+      <div class="card"><div class="icon">🌐</div><h3>Client Portal</h3><p>Gives every client a clean project page with files, status, invoices, and next steps.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Professional dashboard mockup</h2>
+      <p>Everything the freelancer needs in one clean workspace.</p>
+    </div>
+
+    <div class="dashboard">
+      <div class="dashboard-top">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <div class="screen">
+        <div class="sidebar">
+          <div class="menu active">Command Center</div>
+          <div class="menu">Clients</div>
+          <div class="menu">Proposals</div>
+          <div class="menu">Contracts</div>
+          <div class="menu">Invoices</div>
+          <div class="menu">Tax Vault</div>
+        </div>
+        <div class="main-screen">
+          <h3 style="margin-bottom:15px">Client: Restaurant Website</h3>
+          <div class="timeline">
+            <div class="task"><span>Proposal generated</span><span class="tag">Ready</span></div>
+            <div class="task"><span>Contract checklist created</span><span class="tag">Review</span></div>
+            <div class="task"><span>Deposit invoice: $1,000</span><span class="tag">Send</span></div>
+            <div class="task"><span>Project timeline: 3 weeks</span><span class="tag">Planned</span></div>
+            <div class="task"><span>Tax reserve suggestion: 25%</span><span class="tag">Finance</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="section-title">
+      <h2>Try the AI workflow demo</h2>
+      <p>Paste a client message and see how FreelancerOS transforms it into a business workflow.</p>
+    </div>
+
+    <div class="demo-wrap">
+      <div class="panel">
+        <h3 style="margin-bottom:12px">Client message</h3>
+        <textarea id="message">Hi, I need a landing page for my fitness coaching business. I want it ready in 2 weeks. My budget is $1,500. Can you help?</textarea>
+        <button class="btn" onclick="generateWorkflow()">Generate AI Workflow</button>
+      </div>
+
+      <div class="panel">
+        <div class="output-grid" id="output">
+          <div class="mini"><h4>Waiting for input</h4><p>Click the button to generate the workflow.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="section-title">
+      <h2>Simple pricing for solo businesses</h2>
+      <p>Start small, then grow into a complete operating system.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Starter</h3>
+        <div class="price">$9<span>/month</span></div>
+        <ul>
+          <li>5 AI proposals/month</li>
+          <li>5 invoices/month</li>
+          <li>Basic project tracker</li>
+          <li>Simple reminders</li>
+        </ul>
+      </div>
+
+      <div class="price-card featured">
+        <h3>Professional</h3>
+        <div class="price">$29<span>/month</span></div>
+        <ul>
+          <li>Unlimited proposals</li>
+          <li>Unlimited invoices</li>
+          <li>Contract assistant</li>
+          <li>Client portals</li>
+          <li>Tax allocation suggestions</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <h3>Business</h3>
+        <div class="price">$79<span>/month</span></div>
+        <ul>
+          <li>Multiple clients</li>
+          <li>Advanced automations</li>
+          <li>Custom branding</li>
+          <li>Revenue dashboard</li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Built for the passion economy</h2>
+      <p>Perfect for freelancers, consultants, creators, coaches, designers, developers, editors, marketers, and no-code builders.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="section-title">
+      <h2>FAQ</h2>
+    </div>
+    <div class="card">
+      <h3>Is this legal or tax advice?</h3>
+      <p>No. FreelancerOS provides helpful drafts and suggestions. Users should review contracts and taxes with professionals.</p>
+    </div>
+    <div class="card">
+      <h3>Is the AI real in this MVP?</h3>
+      <p>This first version uses a demo workflow to validate demand. Real AI automation can be added after user validation.</p>
+    </div>
+    <div class="card">
+      <h3>Who is this for?</h3>
+      <p>Freelancers, consultants, creators, solo entrepreneurs, and small agencies that want to look professional and get paid faster.</p>
+    </div>
+  </section>
+
+  <section id="waitlist">
+    <div class="waitlist panel">
+      <h2 style="font-size:40px;margin-bottom:12px">Join the founding users program</h2>
+      <p style="color:#cbd5e1;margin-bottom:25px">
+        Get early access and help shape the future of FreelancerOS.
+      </p>
+      <input placeholder="Your name" />
+      <input placeholder="Your email" />
+      <select>
+        <option>Your profession</option>
+        <option>Developer</option>
+        <option>Designer</option>
+        <option>Copywriter</option>
+        <option>Consultant</option>
+        <option>Video editor</option>
+        <option>Other</option>
+      </select>
+      <button class="btn" onclick="alert('Thank you! In the real version, this will save your email.')">Join Waitlist</button>
+    </div>
+  </section>
+
+  <footer>
+    <strong>FreelancerOS</strong> — Help independent workers run their business like a company.
+  </footer>
+</div>
+
+<script>
+function generateWorkflow(){
+  const output = document.getElementById("output");
+
+  output.innerHTML = `
+    <div class="mini">
+      <h4>📄 Proposal</h4>
+      <p><strong>Project:</strong> Landing page for fitness coaching business.</p>
+      <p><strong>Timeline:</strong> 2 weeks.</p>
+      <p><strong>Budget:</strong> $1,500.</p>
+    </div>
+
+    <div class="mini">
+      <h4>📑 Contract Checklist</h4>
+      <ul>
+        <li>50% upfront payment</li>
+        <li>50% before final delivery</li>
+        <li>2 revision rounds included</li>
+        <li>Extra changes billed separately</li>
+      </ul>
+    </div>
+
+    <div class="mini">
+      <h4>💵 Invoice Preview</h4>
+      <p>Deposit invoice: <strong>$750</strong></p>
+      <p>Final invoice: <strong>$750</strong></p>
+      <p>Payment due before project start.</p>
+    </div>
+
+    <div class="mini">
+      <h4>📅 Project Milestones</h4>
+      <ul>
+        <li>Day 1–2: Discovery</li>
+        <li>Day 3–5: Design</li>
+        <li>Day 6–10: Build</li>
+        <li>Day 11–13: Revisions</li>
+        <li>Day 14: Delivery</li>
+      </ul>
+    </div>
+
+    <div class="mini">
+      <h4>🔔 Follow-Up Message</h4>
+      <p>Hi, just a quick reminder that the 50% deposit invoice is due before we begin the project.</p>
+    </div>
+
+    <div class="mini">
+      <h4>🏦 Tax Allocation</h4>
+      <p>Suggested split:</p>
+      <ul>
+        <li>70% available income</li>
+        <li>20% taxes</li>
+        <li>10% business savings</li>
+      </ul>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
