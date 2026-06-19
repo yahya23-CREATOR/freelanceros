@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FreelancerOS — Autonomous Solopreneur OS</title>
+<title>SoloPilot — AI Marketplace & OS for Freelancers</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:#050712;color:white;line-height:1.6}
+body{font-family:Inter,Arial,sans-serif;background:#050712;color:#fff;line-height:1.6}
 a{text-decoration:none;color:inherit}
-.container{width:92%;max-width:1240px;margin:auto}
+.container{width:92%;max-width:1250px;margin:auto}
 .bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at top left,#2563eb66,transparent 32%),radial-gradient(circle at top right,#8b5cf666,transparent 32%),radial-gradient(circle at bottom,#14b8a655,transparent 30%),#050712}
-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;position:sticky;top:0;background:#050712dd;backdrop-filter:blur(18px);z-index:10}
-.logo{font-size:27px;font-weight:900}.logo span{color:#60a5fa}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;position:sticky;top:0;background:#050712dd;backdrop-filter:blur(18px);z-index:20}
+.logo{font-size:28px;font-weight:900}.logo span{color:#60a5fa}
 .navlinks{display:flex;gap:22px;color:#cbd5e1;font-size:14px}
 .btn{display:inline-block;background:linear-gradient(135deg,#3b82f6,#8b5cf6);padding:14px 22px;border-radius:14px;font-weight:800;color:white;border:0;cursor:pointer}
 .btn.secondary{background:#111827;border:1px solid #334155}
-.hero{padding:90px 0 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+.hero{padding:90px 0 65px;display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
 .badge{display:inline-block;padding:8px 14px;border:1px solid #334155;border-radius:999px;color:#cbd5e1;background:#0f172a;margin-bottom:20px}
-h1{font-size:clamp(42px,7vw,80px);line-height:1;letter-spacing:-4px;margin-bottom:24px}
+h1{font-size:clamp(42px,7vw,82px);line-height:1;letter-spacing:-4px;margin-bottom:24px}
 .hero p{font-size:21px;color:#cbd5e1;margin-bottom:30px;max-width:720px}
 .actions{display:flex;gap:14px;flex-wrap:wrap}
 .panel,.card,.mock,.price,.mini{background:linear-gradient(180deg,#111827ee,#0f172add);border:1px solid #1e293b;border-radius:26px;box-shadow:0 30px 90px #0008}
@@ -27,10 +27,10 @@ h1{font-size:clamp(42px,7vw,80px);line-height:1;letter-spacing:-4px;margin-botto
 .topdots{display:flex;gap:7px;margin-bottom:15px}.dot{width:11px;height:11px;border-radius:50%;background:#475569}
 .ai-line{display:flex;justify-content:space-between;background:#0f172a;border:1px solid #1e293b;padding:13px;border-radius:14px;margin:9px 0;color:#e5e7eb}.ai-line span{color:#60a5fa}
 section{padding:76px 0}
-.title{text-align:center;max-width:820px;margin:0 auto 45px}.title h2{font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-2px;margin-bottom:14px}.title p{color:#cbd5e1;font-size:18px}
+.title{text-align:center;max-width:850px;margin:0 auto 45px}.title h2{font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-2px;margin-bottom:14px}.title p{color:#cbd5e1;font-size:18px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .card{padding:26px}.card h3{font-size:22px;margin-bottom:10px}.card p,.card li{color:#cbd5e1}.icon{font-size:30px;margin-bottom:12px}
-.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}
 .step{background:#0f172a;border:1px solid #334155;border-radius:20px;padding:20px;text-align:center}.step b{color:#93c5fd}
 .dash{display:grid;grid-template-columns:230px 1fr;gap:16px;padding:20px}
 .side,.main{background:#020617;border:1px solid #1e293b;border-radius:20px;padding:18px}
@@ -41,6 +41,11 @@ input,textarea,select{width:100%;padding:15px;border-radius:14px;border:1px soli
 textarea{height:170px;resize:none}
 .demo{display:grid;grid-template-columns:1fr 1.25fr;gap:22px}
 .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}.price{padding:28px}.amount{font-size:42px;font-weight:900;margin:10px 0}.featured{border:1px solid #60a5fa;transform:scale(1.03)}
+.table{overflow:auto;border-radius:22px;border:1px solid #1e293b}
+table{width:100%;border-collapse:collapse;background:#020617}
+th,td{padding:15px;border-bottom:1px solid #1e293b;text-align:left;color:#cbd5e1}
+th{color:white;background:#111827}
+.pill{display:inline-block;padding:5px 10px;border-radius:99px;background:#064e3b;color:#6ee7b7;font-size:12px}
 .wait{max-width:740px;margin:auto;text-align:center;padding:36px}
 footer{text-align:center;color:#94a3b8;border-top:1px solid #1e293b;padding:34px}
 @media(max-width:850px){.hero,.demo,.dash{grid-template-columns:1fr}.navlinks{display:none}h1{letter-spacing:-2px}.featured{transform:none}}
@@ -51,140 +56,142 @@ footer{text-align:center;color:#94a3b8;border-top:1px solid #1e293b;padding:34px
 
 <div class="container">
 <nav>
-<div class="logo">Freelancer<span>OS</span></div>
+<div class="logo">Solo<span>Pilot</span></div>
 <div class="navlinks">
-<a href="#product">Product</a><a href="#marketplace">Marketplace</a><a href="#ai">AI</a><a href="#demo">Demo</a><a href="#pricing">Pricing</a>
+<a href="#mvp">MVP</a><a href="#dashboard">Dashboard</a><a href="#database">Database</a><a href="#demo">AI Demo</a><a href="#pricing">Pricing</a>
 </div>
 <a class="btn" href="#waitlist">Join Waitlist</a>
 </nav>
 
 <section class="hero">
 <div>
-<div class="badge">Autonomous Solopreneur OS</div>
-<h1>The operating system for the independent workforce.</h1>
-<p>FreelancerOS combines a freelance marketplace, client management, contracts, escrow, payments, project tracking, reviews, and an AI executive assistant in one unified platform.</p>
+<div class="badge">AI Marketplace + Solopreneur Operating System</div>
+<h1>The command center for the independent workforce.</h1>
+<p>SoloPilot connects freelancers and clients, then automates proposals, contracts, escrow, milestones, invoices, reviews, notifications, and admin work with an AI executive assistant.</p>
 <div class="actions">
-<a href="#demo" class="btn">Try AI Demo</a>
-<a href="#product" class="btn secondary">Explore Product</a>
+<a href="#dashboard" class="btn">View MVP Prototype</a>
+<a href="#demo" class="btn secondary">Try AI Workflow</a>
 </div>
 </div>
 
 <div class="mock">
 <div class="window">
 <div class="topdots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-<p style="color:#94a3b8;margin-bottom:12px">Raw client email received:</p>
-<p style="background:#0f172a;padding:14px;border-radius:14px;margin-bottom:14px">“I need a website for my restaurant. Budget $2,000. Can you deliver in 3 weeks?”</p>
+<p style="color:#94a3b8;margin-bottom:12px">Raw client request:</p>
+<p style="background:#0f172a;padding:14px;border-radius:14px;margin-bottom:14px">“I need a SaaS landing page and dashboard. Budget $1,800. Deadline 3 weeks.”</p>
+<div class="ai-line">Freelancer match <span>92%</span></div>
 <div class="ai-line">Proposal <span>Generated</span></div>
 <div class="ai-line">Contract <span>Drafted</span></div>
-<div class="ai-line">Escrow invoice <span>$1,000</span></div>
-<div class="ai-line">Client portal <span>Created</span></div>
-<div class="ai-line">Milestones <span>3 weeks</span></div>
+<div class="ai-line">Escrow deposit <span>$900</span></div>
+<div class="ai-line">Milestones <span>Created</span></div>
 <div class="ai-line">Tax reserve <span>20%</span></div>
 </div>
 </div>
 </section>
 
-<section id="product">
+<section id="mvp">
 <div class="title">
-<h2>The problem: independent worker chaos</h2>
-<p>Freelancers are forced to juggle separate apps for invoicing, project management, client communication, contracts, payments, and taxes. FreelancerOS brings everything into one autonomous system.</p>
-</div>
-
-<div class="flow">
-<div class="step"><b>1</b><br>Client message</div>
-<div class="step"><b>2</b><br>AI analysis</div>
-<div class="step"><b>3</b><br>Proposal</div>
-<div class="step"><b>4</b><br>Contract</div>
-<div class="step"><b>5</b><br>Escrow</div>
-<div class="step"><b>6</b><br>Project</div>
-<div class="step"><b>7</b><br>Invoice</div>
-<div class="step"><b>8</b><br>Tax split</div>
-</div>
-</section>
-
-<section id="marketplace">
-<div class="title">
-<h2>Marketplace + business OS</h2>
-<p>Unlike Upwork or Fiverr, FreelancerOS does not only connect clients and freelancers. It helps run the entire business after the match.</p>
+<h2>Real MVP scope</h2>
+<p>This is the first serious version of SoloPilot. Not the full billion-dollar platform yet, but enough to test the core marketplace + AI workflow.</p>
 </div>
 
 <div class="grid">
-<div class="card"><div class="icon">🔐</div><h3>User Authentication</h3><p>Freelancer, client, and admin accounts with secure signup/login experience.</p></div>
-<div class="card"><div class="icon">👤</div><h3>Freelancer Profiles</h3><p>Portfolio, skills, rating, earnings, availability, AI success score, and verified identity.</p></div>
-<div class="card"><div class="icon">🏢</div><h3>Client Profiles</h3><p>Company details, spending history, verification, reviews from freelancers, and trust score.</p></div>
-<div class="card"><div class="icon">📌</div><h3>Job Posting System</h3><p>Clients post jobs. AI improves the description, scope, budget, and required skills.</p></div>
-<div class="card"><div class="icon">🤝</div><h3>Proposal & Bidding</h3><p>Freelancers generate professional proposals with one click and submit competitive bids.</p></div>
-<div class="card"><div class="icon">💬</div><h3>Messaging & Chat</h3><p>Real-time chat, file sharing, AI summaries, and smart suggested replies.</p></div>
-<div class="card"><div class="icon">💳</div><h3>Payments & Escrow</h3><p>Clients fund milestones. Money is safely released after approval.</p></div>
-<div class="card"><div class="icon">⭐</div><h3>Reviews & Ratings</h3><p>Two-sided reviews so both freelancers and clients build reputation.</p></div>
-<div class="card"><div class="icon">🔎</div><h3>Search Engine</h3><p>Search freelancers, jobs, categories, skills, budget, rating, location, and availability.</p></div>
-<div class="card"><div class="icon">🔔</div><h3>Notifications</h3><p>Instant alerts for jobs, messages, proposals, payments, milestones, and disputes.</p></div>
-<div class="card"><div class="icon">🛡️</div><h3>Admin Dashboard</h3><p>Moderation, users, payments, disputes, analytics, fraud detection, and platform control.</p></div>
-<div class="card"><div class="icon">📱</div><h3>Mobile App</h3><p>iOS and Android experience for jobs, chat, payments, AI assistant, and notifications.</p></div>
-</div>
-</section>
-
-<section id="ai">
-<div class="title">
-<h2>The AI executive assistant</h2>
-<p>This is the unfair advantage. FreelancerOS is not just a marketplace. It gives every freelancer an AI operator that handles admin work automatically.</p>
-</div>
-
-<div class="grid">
-<div class="card"><h3>AI Proposal Writer</h3><p>Turns client requests into polished proposals with scope, timeline, deliverables, and pricing.</p></div>
-<div class="card"><h3>AI Contract Builder</h3><p>Creates contract drafts with payment terms, ownership, revisions, deadlines, and late payment clauses.</p></div>
-<div class="card"><h3>AI Project Manager</h3><p>Creates milestones, detects delays, predicts project risk, and suggests next actions.</p></div>
-<div class="card"><h3>AI Negotiation Assistant</h3><p>Helps freelancers respond to low budgets, scope creep, and difficult client messages.</p></div>
-<div class="card"><h3>AI Client Risk Detector</h3><p>Analyzes client behavior, reviews, disputes, and payment history to warn freelancers.</p></div>
-<div class="card"><h3>AI Business Health Dashboard</h3><p>Tracks income, active projects, unpaid invoices, cash flow, taxes, and growth opportunities.</p></div>
+<div class="card"><div class="icon">🔐</div><h3>Authentication</h3><p>Freelancer, client, and admin accounts with role-based access.</p></div>
+<div class="card"><div class="icon">👤</div><h3>Freelancer Profiles</h3><p>Skills, bio, hourly rate, portfolio, rating, availability, verified badge.</p></div>
+<div class="card"><div class="icon">🏢</div><h3>Client Profiles</h3><p>Company, industry, website, spending history, verification, rating.</p></div>
+<div class="card"><div class="icon">📌</div><h3>Job Posting</h3><p>Clients post jobs. AI improves scope, budget, category, and required skills.</p></div>
+<div class="card"><div class="icon">🤝</div><h3>Proposals</h3><p>Freelancers generate AI proposals and bid on jobs professionally.</p></div>
+<div class="card"><div class="icon">💬</div><h3>Messaging</h3><p>Project chat, files, AI summaries, and suggested replies.</p></div>
+<div class="card"><div class="icon">💳</div><h3>Escrow</h3><p>Client funds milestones. Freelancer gets paid after approval.</p></div>
+<div class="card"><div class="icon">⭐</div><h3>Reviews</h3><p>Two-sided reviews between clients and freelancers.</p></div>
+<div class="card"><div class="icon">🔔</div><h3>Notifications</h3><p>Messages, proposals, milestones, payments, disputes, and reviews.</p></div>
 </div>
 </section>
 
 <section>
 <div class="title">
-<h2>Product dashboard preview</h2>
-<p>A single command center for freelancers, clients, admins, payments, and AI workflows.</p>
+<h2>Core workflow</h2>
+<p>From job post to paid project, SoloPilot manages the full lifecycle.</p>
+</div>
+
+<div class="flow">
+<div class="step"><b>1</b><br>Client signs up</div>
+<div class="step"><b>2</b><br>Posts job</div>
+<div class="step"><b>3</b><br>AI improves job</div>
+<div class="step"><b>4</b><br>Freelancer applies</div>
+<div class="step"><b>5</b><br>Contract generated</div>
+<div class="step"><b>6</b><br>Escrow funded</div>
+<div class="step"><b>7</b><br>Milestones completed</div>
+<div class="step"><b>8</b><br>Review + payout</div>
+</div>
+</section>
+
+<section id="dashboard">
+<div class="title">
+<h2>SoloPilot MVP dashboard</h2>
+<p>This is how the real app should feel: one operating system for jobs, proposals, contracts, escrow, chat, reviews, and AI.</p>
 </div>
 
 <div class="panel dash">
 <div class="side">
-<div class="menu active">Command Center</div>
-<div class="menu">Jobs</div>
-<div class="menu">Proposals</div>
-<div class="menu">Contracts</div>
-<div class="menu">Escrow</div>
-<div class="menu">Messages</div>
-<div class="menu">Reviews</div>
-<div class="menu">Admin</div>
+<div class="menu active" onclick="showTab('overview')">Overview</div>
+<div class="menu" onclick="showTab('jobs')">Jobs</div>
+<div class="menu" onclick="showTab('proposals')">Proposals</div>
+<div class="menu" onclick="showTab('contracts')">Contracts</div>
+<div class="menu" onclick="showTab('escrow')">Escrow</div>
+<div class="menu" onclick="showTab('messages')">Messages</div>
+<div class="menu" onclick="showTab('admin')">Admin</div>
 </div>
-<div class="main">
-<h3 style="margin-bottom:15px">Restaurant Website Project</h3>
-<div class="cards2">
-<div class="mini"><h4>Status</h4><p>Contract drafted, deposit invoice ready, client portal active.</p></div>
-<div class="mini"><h4>Escrow</h4><p>$1,000 deposit requested. $1,000 final payment planned.</p></div>
-<div class="mini"><h4>Timeline</h4><p>Week 1 design, Week 2 development, Week 3 testing.</p></div>
-<div class="mini"><h4>AI Alert</h4><p>Ask client for menu content and booking system details before starting.</p></div>
+
+<div class="main" id="tabContent"></div>
 </div>
+</section>
+
+<section id="database">
+<div class="title">
+<h2>Professional database structure</h2>
+<p>This is the real backend structure to build later with Supabase/PostgreSQL.</p>
 </div>
+
+<div class="table">
+<table>
+<thead>
+<tr><th>Table</th><th>Purpose</th><th>Main Fields</th></tr>
+</thead>
+<tbody>
+<tr><td>users</td><td>Authentication and roles</td><td>id, full_name, email, role, country, created_at</td></tr>
+<tr><td>freelancer_profiles</td><td>Freelancer public profiles</td><td>user_id, headline, bio, skills, hourly_rate, rating, verified</td></tr>
+<tr><td>client_profiles</td><td>Client/company profiles</td><td>user_id, company_name, industry, website, total_spent, verified</td></tr>
+<tr><td>jobs</td><td>Job marketplace</td><td>client_id, title, description, category, budget, deadline, status</td></tr>
+<tr><td>proposals</td><td>Freelancer bids</td><td>job_id, freelancer_id, cover_letter, price, delivery_time, status</td></tr>
+<tr><td>contracts</td><td>Accepted work agreements</td><td>job_id, client_id, freelancer_id, scope, payment_terms, status</td></tr>
+<tr><td>milestones</td><td>Project delivery steps</td><td>contract_id, title, amount, due_date, status</td></tr>
+<tr><td>payments</td><td>Escrow and payout tracking</td><td>contract_id, amount, type, status, created_at</td></tr>
+<tr><td>messages</td><td>Chat system</td><td>job_id, sender_id, receiver_id, message_text, read_at</td></tr>
+<tr><td>reviews</td><td>Reputation system</td><td>job_id, reviewer_id, reviewed_user_id, rating, comment</td></tr>
+<tr><td>notifications</td><td>User alerts</td><td>user_id, title, message, type, is_read</td></tr>
+<tr><td>ai_logs</td><td>AI action history</td><td>user_id, job_id, action_type, input_text, output_text</td></tr>
+</tbody>
+</table>
 </div>
 </section>
 
 <section id="demo">
 <div class="title">
-<h2>Interactive AI workflow demo</h2>
-<p>Paste a client message and watch FreelancerOS generate the business workflow.</p>
+<h2>AI executive assistant demo</h2>
+<p>Paste a client request and SoloPilot prepares the business workflow automatically.</p>
 </div>
 
 <div class="demo">
 <div class="card">
 <h3 style="margin-bottom:12px">Client message</h3>
-<textarea id="msg">Hi, I need a website for my restaurant. I want online booking, a menu page, and a contact form. My budget is $2,000 and I need it in 3 weeks.</textarea>
+<textarea id="msg">Hi, I need a SaaS landing page and a simple dashboard for my startup. My budget is $1,800 and I need it in 3 weeks.</textarea>
 <button class="btn" onclick="generate()">Generate Workflow</button>
 </div>
 
 <div class="card">
 <div class="cards2" id="output">
-<div class="mini"><h4>Ready</h4><p>Click generate to see the workflow.</p></div>
+<div class="mini"><h4>Ready</h4><p>Click generate to see proposal, contract, escrow, milestones, and tax split.</p></div>
 </div>
 </div>
 </div>
@@ -193,34 +200,20 @@ footer{text-align:center;color:#94a3b8;border-top:1px solid #1e293b;padding:34px
 <section id="pricing">
 <div class="title">
 <h2>Monetization model</h2>
-<p>FreelancerOS can monetize from subscriptions, escrow fees, payment processing, premium AI features, and enterprise plans.</p>
+<p>SoloPilot can earn from subscriptions, escrow fees, AI credits, premium visibility, and business plans.</p>
 </div>
 
 <div class="prices">
-<div class="price"><h3>Starter</h3><div class="amount">$9</div><p>For beginners.</p><ul><li>Basic profile</li><li>5 AI proposals</li><li>Basic invoices</li><li>Job browsing</li></ul></div>
-<div class="price featured"><h3>Professional</h3><div class="amount">$29</div><p>For active freelancers.</p><ul><li>Unlimited proposals</li><li>Contracts</li><li>Client portals</li><li>Escrow projects</li><li>AI assistant</li></ul></div>
-<div class="price"><h3>Business</h3><div class="amount">$79</div><p>For consultants and agencies.</p><ul><li>Team features</li><li>Advanced analytics</li><li>Custom branding</li><li>Priority support</li></ul></div>
-</div>
-</section>
-
-<section>
-<div class="title">
-<h2>Why FreelancerOS can be better</h2>
-<p>The goal is not to copy Upwork or Fiverr. The goal is to build the AI-native business infrastructure for independent workers.</p>
-</div>
-
-<div class="grid">
-<div class="card"><h3>Not only a marketplace</h3><p>It continues helping after the client hires the freelancer.</p></div>
-<div class="card"><h3>Built around automation</h3><p>AI handles proposals, contracts, invoices, milestones, reminders, and taxes.</p></div>
-<div class="card"><h3>Trust-first system</h3><p>Escrow, verified profiles, two-sided reviews, risk detection, and admin controls.</p></div>
-<div class="card"><h3>Business command center</h3><p>Freelancers can manage their whole business from one screen.</p></div>
+<div class="price"><h3>Starter</h3><div class="amount">$9</div><p>For new freelancers.</p><ul><li>Basic profile</li><li>5 AI proposals</li><li>Job browsing</li><li>Simple invoices</li></ul></div>
+<div class="price featured"><h3>Professional</h3><div class="amount">$29</div><p>For active freelancers.</p><ul><li>Unlimited proposals</li><li>Contracts</li><li>Client portal</li><li>AI assistant</li><li>Escrow projects</li></ul></div>
+<div class="price"><h3>Business</h3><div class="amount">$79</div><p>For agencies and consultants.</p><ul><li>Multiple clients</li><li>Advanced analytics</li><li>Custom branding</li><li>Priority support</li></ul></div>
 </div>
 </section>
 
 <section id="waitlist">
 <div class="panel wait">
-<h2 style="font-size:40px;margin-bottom:10px">Join the FreelancerOS waitlist</h2>
-<p style="color:#cbd5e1;margin-bottom:24px">Be part of the first AI-native operating system for freelancers and clients.</p>
+<h2 style="font-size:40px;margin-bottom:10px">Join the SoloPilot waitlist</h2>
+<p style="color:#cbd5e1;margin-bottom:24px">Be part of the first AI-native marketplace and operating system for independent workers.</p>
 <input placeholder="Full name">
 <input placeholder="Email address">
 <select>
@@ -230,26 +223,108 @@ footer{text-align:center;color:#94a3b8;border-top:1px solid #1e293b;padding:34px
 <option>Agency</option>
 <option>Investor / Partner</option>
 </select>
-<button class="btn" onclick="alert('Waitlist demo only. Connect this to Formspree or Google Forms later.')">Join Waitlist</button>
+<button class="btn" onclick="alert('Waitlist demo only. Next step: connect Formspree or Supabase.')">Join Waitlist</button>
 </div>
 </section>
 
 <footer>
-<strong>FreelancerOS</strong> — The Autonomous Operating System for the Independent Workforce.
+<strong>SoloPilot</strong> — AI Marketplace & Operating System for Independent Workers.
 </footer>
 </div>
 
 <script>
+const tabContent=document.getElementById("tabContent");
+
+function showTab(tab){
+  const menus=document.querySelectorAll(".menu");
+  menus.forEach(m=>m.classList.remove("active"));
+  event.target.classList.add("active");
+
+  if(tab==="overview"){
+    tabContent.innerHTML=`
+    <h3 style="margin-bottom:15px">Command Center</h3>
+    <div class="cards2">
+      <div class="mini"><h4>Active Jobs</h4><p>12 open jobs available for your skills.</p></div>
+      <div class="mini"><h4>AI Assistant</h4><p>3 proposals ready to review.</p></div>
+      <div class="mini"><h4>Escrow</h4><p>$2,400 currently secured.</p></div>
+      <div class="mini"><h4>Notifications</h4><p>5 unread updates from clients.</p></div>
+    </div>`;
+  }
+
+  if(tab==="jobs"){
+    tabContent.innerHTML=`
+    <h3 style="margin-bottom:15px">Job Marketplace</h3>
+    <div class="cards2">
+      <div class="mini"><h4>SaaS Landing Page</h4><p>Budget: $1,800 · Deadline: 3 weeks · Match: <span class="pill">94%</span></p></div>
+      <div class="mini"><h4>Mobile App UI</h4><p>Budget: $2,500 · Deadline: 1 month · Match: <span class="pill">88%</span></p></div>
+      <div class="mini"><h4>E-commerce Website</h4><p>Budget: $3,000 · Deadline: 5 weeks · Match: <span class="pill">91%</span></p></div>
+    </div>`;
+  }
+
+  if(tab==="proposals"){
+    tabContent.innerHTML=`
+    <h3 style="margin-bottom:15px">AI Proposals</h3>
+    <div class="cards2">
+      <div class="mini"><h4>Proposal Draft</h4><p>Scope, timeline, price, deliverables, and CTA generated automatically.</p></div>
+      <div class="mini"><h4>Bid Strategy</h4><p>Recommended bid: $1,750 based on client budget and market range.</p></div>
+      <div class="mini"><h4>Negotiation Reply</h4><p>AI suggests a professional response if the client asks for a lower price.</p></div>
+    </div>`;
+  }
+
+  if(tab==="contracts"){
+    tabContent.innerHTML=`
+    <h3 style="margin-bottom:15px">Contracts</h3>
+    <div class="cards2">
+      <div class="mini"><h4>Contract Draft</h4><p>Scope, payment terms, revision policy, ownership, and cancellation rules.</p></div>
+      <div class="mini"><h4>Status</h4><p>Waiting for client signature.</p></div>
+      <div class="mini"><h4>Protection</h4><p>Late payment and scope creep clauses included.</p></div>
+    </div>`;
+  }
+
+  if(tab==="escrow"){
+    tabContent.innerHTML=`
+    <h3 style="margin-bottom:15px">Payments & Escrow</h3>
+    <div class="cards2">
+      <div class="mini"><h4>Deposit</h4><p>$900 funded by client before project starts.</p></div>
+      <div class="mini"><h4>Final Payment</h4><p>$900 released after milestone approval.</p></div>
+      <div class="mini"><h4>Tax Reserve</h4><p>Suggested reserve: $360 from total project value.</p></div>
+    </div>`;
+  }
+
+  if(tab==="messages"){
+    tabContent.innerHTML=`
+    <h3 style="margin-bottom:15px">Messaging</h3>
+    <div class="cards2">
+      <div class="mini"><h4>Client Message</h4><p>Can we add one extra dashboard page?</p></div>
+      <div class="mini"><h4>AI Suggested Reply</h4><p>Yes, I can add it. Since it is outside the original scope, I can include it for an additional $250.</p></div>
+      <div class="mini"><h4>Summary</h4><p>AI summarized the discussion and updated the project risk score.</p></div>
+    </div>`;
+  }
+
+  if(tab==="admin"){
+    tabContent.innerHTML=`
+    <h3 style="margin-bottom:15px">Admin Dashboard</h3>
+    <div class="cards2">
+      <div class="mini"><h4>Users</h4><p>Freelancers: 842 · Clients: 219</p></div>
+      <div class="mini"><h4>Escrow Volume</h4><p>$124,800 secured this month.</p></div>
+      <div class="mini"><h4>Disputes</h4><p>7 open disputes requiring review.</p></div>
+      <div class="mini"><h4>Fraud Detection</h4><p>AI flagged 3 suspicious accounts.</p></div>
+    </div>`;
+  }
+}
+
 function generate(){
 document.getElementById("output").innerHTML=`
-<div class="mini"><h4>Proposal</h4><p>Restaurant website with booking, menu page, contact form. Timeline: 3 weeks. Budget: $2,000.</p></div>
-<div class="mini"><h4>Contract</h4><ul><li>50% upfront</li><li>50% before delivery</li><li>2 revisions included</li><li>Extra features billed separately</li></ul></div>
-<div class="mini"><h4>Escrow</h4><p>Client funds $1,000 deposit before work starts. Final $1,000 released after approval.</p></div>
-<div class="mini"><h4>Client Portal</h4><p>Portal created with files, timeline, invoices, messages, and approval checklist.</p></div>
-<div class="mini"><h4>Milestones</h4><ul><li>Week 1: Design</li><li>Week 2: Development</li><li>Week 3: Testing & delivery</li></ul></div>
-<div class="mini"><h4>Tax Split</h4><p>Suggested: $1,400 available, $400 taxes, $200 business savings.</p></div>
+<div class="mini"><h4>Proposal</h4><p>SaaS landing page + simple dashboard. Timeline: 3 weeks. Budget: $1,800.</p></div>
+<div class="mini"><h4>Contract</h4><ul><li>50% upfront</li><li>50% before delivery</li><li>2 revision rounds</li><li>Extra features billed separately</li></ul></div>
+<div class="mini"><h4>Escrow</h4><p>Client funds $900 deposit before work starts. Final $900 released after approval.</p></div>
+<div class="mini"><h4>Milestones</h4><ul><li>Week 1: Landing page design</li><li>Week 2: Dashboard UI</li><li>Week 3: Testing and delivery</li></ul></div>
+<div class="mini"><h4>AI Reply</h4><p>Hi, I can help with this. I suggest splitting the project into two milestones: landing page first, then dashboard.</p></div>
+<div class="mini"><h4>Money Split</h4><ul><li>$1,260 available income</li><li>$360 tax reserve</li><li>$180 business savings</li></ul></div>
 `;
 }
+
+showTab("overview");
 </script>
 </body>
 </html>
